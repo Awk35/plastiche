@@ -1,0 +1,189 @@
+<html>
+<body>
+
+<div id="mainContainer">
+
+	<!-- SIDEBAR -->
+	<div class="sidebar">
+
+		<div class="title">
+			<div class="bigTitle">MICROPLASTICHE</div>
+			<div class="subtitle">MENU</div>
+		</div>
+
+		<div class="menu">
+			<div class="btnBox">
+
+				<button id="introduzionePulsante" class="nav" onclick="setPage(this,'introduzionemicroplastiche.html')">Introduzione</button>
+				<button class="nav" onclick="setPage(this,'circolatore.html')">Apparato Circolatorio</button>
+				<button class="nav" onclick="setPage(this,'respiratorio.html')">Apparato Respiratorio</button>
+				<button class="nav" onclick="setPage(this,'digerente.html')">Apparato Digerente</button>
+				<button class="nav" onclick="setPage(this,'nervoso.html')">Sistema Nervoso</button>
+				<button class="nav" onclick="setPage(this,'immunitario.html')">Sistema Immunitario</button>
+				<button class="nav" onclick="setPage(this,'escretore.html')">Apparato Escretore</button>
+				<button class="nav" onclick="setPage(this,'inquinamento.html')">L'Inquinamento</button>
+				<button class="nav" onclick="setPage(this,'CreditiMicroPlastiche.html')">Chi Siamo</button>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- CONTENT -->
+	<div class="content">
+		<iframe name="TextFrame" src="introduzionemicroplastiche.html"></iframe>
+	</div>
+
+</div>
+
+<script>
+	function setPage(btn, page){
+		document.getElementsByName('TextFrame')[0].src = page;
+
+		document.querySelectorAll(".nav").forEach(b => b.classList.remove("active"));
+		btn.classList.add("active");
+	}
+
+	window.onload = function() {
+		document.getElementById("introduzionePulsante").click();
+	}
+</script>
+
+<style>
+
+	html, body {
+		height: 100%;
+		margin: 0;
+		font-family: "Segoe UI", sans-serif;
+		background: #0b1220;
+	}
+
+	/* CONTAINER PRINCIPALE */
+	#mainContainer{
+		display: flex;
+		height: 100vh;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	/* SIDEBAR */
+	.sidebar{
+		width: 280px; /* fisso ma adattabile */
+		min-width: 220px;
+		max-width: 350px;
+
+		display: flex;
+		flex-direction: column;
+
+		background: linear-gradient(180deg, #0f172a, #0b1220);
+		box-shadow: 10px 0 40px rgba(0,0,0,0.5);
+	}
+
+	/* TITLE */
+	.title{
+		text-align: center;
+		padding: 20px;
+		color: white;
+	}
+
+	.bigTitle{
+		font-size: 28px;
+		font-weight: 800;
+	}
+
+	.subtitle{
+		font-size: 12px;
+		color: #94a3b8;
+		margin-top: 5px;
+		letter-spacing: 3px;
+	}
+
+	/* MENU */
+	.menu{
+		flex: 1;
+		overflow: hidden;
+	}
+
+	.btnBox{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 10px;
+		height: 85%;
+		overflow-y: auto;
+	}
+
+	/* SCROLLBAR MODERNA */
+	.btnBox::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	.btnBox::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.btnBox::-webkit-scrollbar-thumb {
+		background: rgba(255,255,255,0.2);
+		border-radius: 10px;
+	}
+
+	.btnBox::-webkit-scrollbar-thumb:hover {
+		background: rgba(255,255,255,0.35);
+	}
+
+	/* BOTTONI */
+	.nav{
+		width: 100%;
+		margin: 8px 0;
+		padding: 14px;
+
+		border: 1px solid rgba(255,255,255,0.08);
+		border-radius: 14px;
+
+		background: rgba(255,255,255,0.04);
+		color: #e5e7eb;
+
+		font-size: 14px;
+		cursor: pointer;
+
+		transition: all 0.25s ease;
+	}
+
+	.nav:hover{
+		transform: translateY(-2px);
+		background: rgba(255,255,255,0.10);
+	}
+
+	.nav.active{
+		background: #ffffff;
+		color: #0b1220;
+		font-weight: 600;
+	}
+
+	.nav:active{
+		transform: scale(0.98);
+	}
+
+	/* CONTENUTO */
+	.content{
+		flex: 1;
+		background: white;
+	}
+
+	.content iframe{
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	/* 🔥 RESPONSIVE PER SCHERMI PICCOLI */
+	@media (max-width: 900px){
+		.sidebar{
+			width: 220px;
+		}
+	}
+
+</style>
+
+</body>
+</html>
